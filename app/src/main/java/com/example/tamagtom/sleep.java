@@ -3,21 +3,19 @@ package com.example.tamagtom;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.fragment.app.Fragment;
+
 
 public class sleep extends Fragment implements View.OnLongClickListener, View.OnDragListener {
-    private ImageView banana, tree;
+    private ImageView banana, tree,sun,moon,bk;
     private static final String IMAGEVIEW_TAG = "icon bitmap";
-    private Tamag tom;
+    private final Tamag tom;
 
     @Override
 
@@ -26,6 +24,10 @@ public class sleep extends Fragment implements View.OnLongClickListener, View.On
         View v = inflater.inflate(R.layout.fragment_sleep, container, false);
         banana = v.findViewById(R.id.imageView4);
         tree = v.findViewById(R.id.imageView9);
+        sun = v.findViewById(R.id.imageView15);
+        moon = v.findViewById(R.id.imageView19);
+        bk=v.findViewById(R.id.imageView20);
+        moon.setOnClickListener(gm);
         banana.setTag(IMAGEVIEW_TAG);
         banana.setOnLongClickListener(this);
         tree.setOnDragListener(this);
@@ -35,9 +37,7 @@ public class sleep extends Fragment implements View.OnLongClickListener, View.On
         this.tom = tom;
     }
     public boolean onDrag(View v, DragEvent event) {
-        // Defines a variable to store the action type for the incoming event
         int action = event.getAction();
-        // Handles each of the expected events
         switch (action) {
             case DragEvent.ACTION_DRAG_STARTED:
                 if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
@@ -47,36 +47,36 @@ public class sleep extends Fragment implements View.OnLongClickListener, View.On
                 return false;
 
             case DragEvent.ACTION_DRAG_ENTERED:
+
+            case DragEvent.ACTION_DRAG_EXITED:
+
+            case DragEvent.ACTION_DRAG_ENDED:
+
                 v.invalidate();
                 return true;
 
             case DragEvent.ACTION_DRAG_LOCATION:
                 return true;
 
-            case DragEvent.ACTION_DRAG_EXITED:
-                v.getBackground().clearColorFilter();
-                v.invalidate();
-                return true;
-
             case DragEvent.ACTION_DROP:
-                ClipData.Item item = event.getClipData().getItemAt(0);
-                String dragData = item.getText().toString();
-                if(tom.energy<=tom.ENERGY_CANSLEEP) {
-                    tom.doSleep();
-                }
-
-                v.invalidate();
-                return true;
-
-            case DragEvent.ACTION_DRAG_ENDED:
+                tom.doSleep();
+                night();
                 v.invalidate();
                 return true;
             default:
-                Log.e("DragDrop Example", "Unknown action type received by OnDragListener.");
                 break;
         }
         return false;
     }
+    View.OnClickListener gm = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            moon.setVisibility(View.INVISIBLE);
+            sun.setVisibility(View.VISIBLE);
+            bk.setAlpha(0.0f);
+        }
+    };
+
     public boolean onLongClick(View v) {
         ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
         String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
@@ -89,4 +89,12 @@ public class sleep extends Fragment implements View.OnLongClickListener, View.On
         );
         return true;
     }
+
+   public void night(){
+        moon.setVisibility(View.VISIBLE);
+        sun.setVisibility(View.INVISIBLE);
+        bk.setAlpha(0.5f);
+
+
+   }
 }

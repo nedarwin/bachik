@@ -8,25 +8,41 @@
     tools:context=".tolet">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/banana"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        android:src="@drawable/tolet"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="330dp"
-        android:layout_height="637dp"
-        android:layout_marginTop="192dp"
-        android:src="@drawable/toiler"
+        android:layout_width="256dp"
+        android:layout_height="433dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="188dp"
+        android:src="@drawable/tubz"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="418dp"
+        android:layout_height="925dp"
+        android:layout_marginStart="92dp"
+        android:src="@drawable/banana"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.896" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="416dp"
+        android:layout_height="352dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/bath"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

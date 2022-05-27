@@ -8,25 +8,64 @@
     tools:context=".sleep">
 
     <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sleep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="92dp"
-        android:layout_height="356dp"
+        android:layout_width="358dp"
+        android:layout_height="651dp"
+        android:layout_marginStart="156dp"
         android:contentDescription="TODO"
         android:src="@drawable/banana"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="392dp"
-        android:layout_height="700dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="335dp"
+        android:layout_height="456dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="108dp"
         android:src="@drawable/tree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="208dp"
+        android:layout_height="330dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="456dp"
+        android:src="@drawable/sunny"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/moon"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="412dp"
+        android:layout_height="735dp"
+        android:alpha="0"
+        android:src="@android:drawable/screen_background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

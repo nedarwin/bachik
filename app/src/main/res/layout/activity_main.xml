@@ -52,8 +52,8 @@
         android:id="@+id/imageView7"
         android:layout_width="186dp"
         android:layout_height="250dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="488dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginBottom="492dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sun" />
@@ -86,39 +86,5 @@
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/button"
         app:layout_constraintVertical_bias="1.0" />
-
-    <SeekBar
-        android:id="@+id/seekBar5"
-        android:layout_width="210dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="136dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/twage"
-        android:layout_width="213dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="56dp"
-        android:text="Ваш возраст: "
-        android:textColor="#DC7423"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.984"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/twage1"
-        android:layout_width="58dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="80dp"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

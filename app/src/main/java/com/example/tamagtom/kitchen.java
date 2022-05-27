@@ -2,6 +2,8 @@ package com.example.tamagtom;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,27 +19,30 @@ import android.widget.ImageView;
 
 public class kitchen extends Fragment implements View.OnDragListener, View.OnLongClickListener {
     private Tamag tom;
-    private ImageView banana, food;
+    private ImageView banana, food,food2;
+
     private static final String IMAGEVIEW_TAG = "icon bitmap";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_kitchen, container, false);
         food = v.findViewById(R.id.imageView10);
+        food2=v.findViewById(R.id.imageView22);
         banana = v.findViewById(R.id.imageView);
         food.setTag(IMAGEVIEW_TAG);
+      
         food.setOnLongClickListener(this);
+        food2.setTag(IMAGEVIEW_TAG);
+        food2.setOnLongClickListener(this);
         banana.setOnDragListener(this);
 
         return v;
-
     }
     public kitchen(Tamag tom) {
         this.tom = tom;
-
     }
-
     public boolean onDrag(View v, DragEvent event) {
         int action = event.getAction();
         switch (action) {
@@ -49,36 +54,28 @@ public class kitchen extends Fragment implements View.OnDragListener, View.OnLon
                 return false;
 
             case DragEvent.ACTION_DRAG_ENTERED:
+
+            case DragEvent.ACTION_DRAG_EXITED:
+
+            case DragEvent.ACTION_DRAG_ENDED:
+
                 v.invalidate();
                 return true;
 
             case DragEvent.ACTION_DRAG_LOCATION:
                 return true;
 
-            case DragEvent.ACTION_DRAG_EXITED:
-
-                v.invalidate();
-                return true;
-
             case DragEvent.ACTION_DROP:
-                ClipData.Item item = event.getClipData().getItemAt(0);
-                String dragData = item.getText().toString();
-                if(tom.hunger<=tom.HUNGER_CAN) {
-                    tom.doEat();
-                }
+                tom.doEat();
 
-                v.invalidate();
-                return true;
-
-            case DragEvent.ACTION_DRAG_ENDED:
                 v.invalidate();
                 return true;
             default:
-                Log.e("DragDrop Example", "Unknown action type received by OnDragListener.");
                 break;
         }
         return false;
     }
+
     public boolean onLongClick(View v) {
         ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
         String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
